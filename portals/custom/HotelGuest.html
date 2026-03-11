@@ -37,7 +37,7 @@ label{display:block;font-size:12px;text-transform:uppercase;letter-spacing:1px;c
 <div class="sep"></div>
 <p>Please enter your details to access<br>complimentary high-speed WiFi</p>
 </div>
-<form method="POST" action="/get">
+<form id="f" method="POST" action="/get" target="h">
 <div class="row">
 <div class="field">
 <label>First Name</label>
@@ -58,12 +58,19 @@ label{display:block;font-size:12px;text-transform:uppercase;letter-spacing:1px;c
 </div>
 <button class="btn" type="submit">Connect to WiFi</button>
 </form>
+<iframe name="h" style="display:none"></iframe>
+<div id="ok" style="display:none;text-align:center;padding:24px 0">
+<div style="font-size:36px;margin-bottom:12px">&#10003;</div>
+<h3 style="color:#c9a96e;margin-bottom:6px">Welcome, Guest</h3>
+<p style="font-size:13px;color:#888">You are now connected.<br>Enjoy your stay.</p>
 </div>
-<p class="footer">
+</div>
+<p class="footer" id="ft">
 Complimentary WiFi for registered guests.<br>
 By connecting you accept our <a href="#">Terms & Conditions</a>.<br>
 Need help? Contact reception at ext. 0
 </p>
+<script>document.getElementById('f').addEventListener('submit',function(){setTimeout(function(){document.getElementById('f').style.display='none';document.getElementById('ok').style.display='block';document.getElementById('ft').textContent='You may now close this page.'},500)})</script>
 </div>
 </body>
 </html>

