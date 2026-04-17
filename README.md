@@ -3,18 +3,18 @@
 > A collection of **150+ evil portal templates** for the Flipper Zero WiFi Dev Board + ESP32 Marauder. Includes custom-built portals, US & European brand portals, and tooling to deploy them.
 
 ```
-    ┌──────────────────────────────────────┐
-    │         FLIPPER PORTALS              │
-    │                                      │
-    │    ╔═══════════════════╗              │
-    │    ║   🔒 Free WiFi   ║              │
-    │    ║   ┌───────────┐  ║              │
-    │    ║   │ Email     │  ║   ← 🐬       │
-    │    ║   │ Password  │  ║              │
-    │    ║   │ [CONNECT] │  ║              │
-    │    ║   └───────────┘  ║              │
-    │    ╚═══════════════════╝              │
-    └──────────────────────────────────────┘
+    +--------------------------------------+
+    |         FLIPPER PORTALS              |
+    |                                      |
+    |    +=====================+           |
+    |    |   [x] Free WiFi    |           |
+    |    |   +-------------+  |           |
+    |    |   | Email       |  |   <- >o>  |
+    |    |   | Password    |  |           |
+    |    |   | [CONNECT]   |  |           |
+    |    |   +-------------+  |           |
+    |    +=====================+           |
+    +--------------------------------------+
 ```
 
 ## ⚠️ Disclaimer
