@@ -1,20 +1,30 @@
-# 🐬 Flipper Portals
+```
+ .o88o. oooo   o8o                                                                                     .             oooo
+ 888 `" `888   `"'                                                                                   .o8             `888
+o888oo   888  oooo  oo.ooooo.  oo.ooooo.   .ooooo.  oooo d8b         oo.ooooo.   .ooooo.  oooo d8b .o888oo  .oooo.    888   .oooo.o
+ 888     888  `888   888' `88b  888' `88b d88' `88b `888""8P          888' `88b d88' `88b `888""8P   888   `P  )88b   888  d88(  "8
+ 888     888   888   888   888  888   888 888ooo888  888     8888888  888   888 888   888  888       888    .oP"888   888  `"Y88b.
+ 888     888   888   888   888  888   888 888    .o  888              888   888 888   888  888       888 . d8(  888   888  o.  )88b
+o888o   o888o o888o  888bod8P'  888bod8P' `Y8bod8P' d888b             888bod8P' `Y8bod8P' d888b      "888" `Y888""8o o888o 8""888P'
+                     888        888                                   888
+                    o888o      o888o                                 o888o
+```
 
 > A collection of **150+ evil portal templates** for the Flipper Zero WiFi Dev Board + ESP32 Marauder. Includes custom-built portals, US & European brand portals, and tooling to deploy them.
 
 ```
-    +--------------------------------------+
-    |         FLIPPER PORTALS              |
-    |                                      |
-    |    +=====================+           |
-    |    |   [x] Free WiFi    |           |
-    |    |   +-------------+  |           |
-    |    |   | Email       |  |   <- >o>  |
-    |    |   | Password    |  |           |
-    |    |   | [CONNECT]   |  |           |
-    |    |   +-------------+  |           |
-    |    +=====================+           |
-    +--------------------------------------+
+    +-------------------------------+
+    |        FLIPPER PORTALS        |
+    |                               |
+    |    +=====================+    |
+    |    |   [x] Free WiFi    |     |
+    |    |   +-------------+  |     |
+    |    |   | Email       |  |     |
+    |    |   | Password    |  |     |
+    |    |   | [CONNECT]   |  |     |
+    |    |   +-------------+  |     |
+    |    +=====================+    |
+    +-------------------------------+
 ```
 
 ## ⚠️ Disclaimer
@@ -23,21 +33,21 @@
 
 ## 📦 What's Inside
 
-| Category | Count | Description |
-|----------|-------|-------------|
-| 🎨 **Custom** | 4 | Hand-crafted portals with modern UI |
-| 🇺🇸 **Premade (US)** | 26 | Google, Facebook, Apple, Microsoft, airlines, ISPs |
-| 🇪🇺 **European** | 124 | Airlines, railways, hotels, gyms, ISPs, supermarkets, brands |
-| **Total** | **154** | Ready to deploy |
+| Category            | Count   | Description                                                  |
+| ------------------- | ------- | ------------------------------------------------------------ |
+| 🎨 **Custom**       | 4       | Hand-crafted portals with modern UI                          |
+| 🇺🇸 **Premade (US)** | 26      | Google, Facebook, Apple, Microsoft, airlines, ISPs           |
+| 🇪🇺 **European**     | 124     | Airlines, railways, hotels, gyms, ISPs, supermarkets, brands |
+| **Total**           | **154** | Ready to deploy                                              |
 
 ### Custom Portals
 
-| Portal | Style | Best For |
-|--------|-------|----------|
-| `CafeWiFi` | Glassmorphism dark theme with Google SSO | Public WiFi, cafés, coworking |
-| `HotelGuest` | Luxury hotel (dark + gold) | Hotels, B&Bs, Airbnbs |
-| `CoffeeShop` | Warm earthy tones, newsletter opt-in | Coffee shops, bakeries |
-| `CorporateWiFi` | Corporate blue with security warnings | Office networks, corporate |
+| Portal          | Style                                    | Best For                      |
+| --------------- | ---------------------------------------- | ----------------------------- |
+| `CafeWiFi`      | Glassmorphism dark theme with Google SSO | Public WiFi, cafés, coworking |
+| `HotelGuest`    | Luxury hotel (dark + gold)               | Hotels, B&Bs, Airbnbs         |
+| `CoffeeShop`    | Warm earthy tones, newsletter opt-in     | Coffee shops, bakeries        |
+| `CorporateWiFi` | Corporate blue with security warnings    | Office networks, corporate    |
 
 ### European Portals (great for EU pentesting)
 
@@ -129,6 +139,7 @@ flipper-portals/
 ## 🎨 Creating Custom Portals
 
 Portal HTML files must:
+
 - Be a single self-contained `.html` file (no external resources)
 - Use `<form method="POST" action="/get">` for the form
 - Have `name="email"` and `name="password"` on the input fields
@@ -138,8 +149,8 @@ Portal HTML files must:
 
 ```html
 <form method="POST" action="/get">
-  <input name="email" type="text" placeholder="Email" required>
-  <input name="password" type="password" placeholder="Password" required>
+  <input name="email" type="text" placeholder="Email" required />
+  <input name="password" type="password" placeholder="Password" required />
   <button type="submit">Connect</button>
 </form>
 ```
