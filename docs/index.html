@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>flipper-portals: 154+ evil portal templates for Flipper Zero</title>
+    <meta
+      name="description"
+      content="154+ evil portal templates for the Flipper Zero WiFi Dev Board and ESP32 Marauder. Custom-built portals, US & EU brands, and tooling to deploy them. For authorized pentesting only."
+    />
+    <meta property="og:title" content="flipper-portals: 154+ evil portal templates for Flipper Zero" />
+    <meta
+      property="og:description"
+      content="Custom portals, US & European brands — airlines, railways, hotels, ISPs, supermarkets — plus deploy tooling for Flipper Zero WiFi Dev Board + ESP32 Marauder."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://l-ubu.github.io/flipper-portals/" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐬</text></svg>"
+    />
+    <style>
+      :root {
+        --bg: #0a0c10;
+        --bg-soft: #11151c;
+        --panel: #151a23;
+        --line: #232a36;
+        --text: #e6edf3;
+        --muted: #8b98a9;
+        --dim: #5c6773;
+        --accent: #fb923c;
+        --accent-dim: #f97316;
+        --green: #4ade80;
+        --red: #f87171;
+        --amber: #fbbf24;
+        --magenta: #e879f9;
+        --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+        --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--sans);
+        font-size: 17px;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+      }
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background:
+          radial-gradient(60rem 40rem at 50% -10rem, rgba(251, 146, 60, 0.09), transparent 70%),
+          linear-gradient(var(--line) 1px, transparent 1px) 0 0 / 100% 4.5rem,
+          linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0 / 4.5rem 100%;
+        opacity: 0.35;
+        mask-image: radial-gradient(70rem 50rem at 50% 0, #000 30%, transparent 75%);
+      }
+      .wrap { position: relative; max-width: 60rem; margin: 0 auto; padding: 0 1.5rem; }
+      a { color: var(--accent); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      header { padding: 5.5rem 0 3.5rem; text-align: center; }
+      pre.logo {
+        font-family: var(--mono);
+        font-size: clamp(0.3rem, 1.25vw, 0.68rem);
+        line-height: 1.25;
+        color: var(--accent);
+        display: inline-block;
+        text-align: left;
+        margin: 0 auto 2rem;
+        overflow: hidden;
+        text-shadow: 0 0 1.5rem rgba(251, 146, 60, 0.35);
+      }
+      h1 { font-size: clamp(1.75rem, 4.5vw, 2.6rem); line-height: 1.2; margin: 0 0 0.9rem; letter-spacing: -0.02em; }
+      .tagline { color: var(--muted); font-size: 1.12rem; max-width: 38rem; margin: 0 auto 2.25rem; }
+      .badges { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.25rem; }
+      .badge {
+        font-family: var(--mono); font-size: 0.72rem; padding: 0.28rem 0.6rem;
+        border: 1px solid var(--line); border-radius: 999px; color: var(--muted); background: var(--bg-soft);
+      }
+      .badge b { color: var(--accent); font-weight: 600; }
+      .install {
+        display: flex; align-items: stretch; max-width: 34rem; margin: 0 auto 1rem;
+        border: 1px solid var(--line); border-radius: 0.6rem; background: var(--bg-soft); overflow: hidden;
+      }
+      .install code {
+        font-family: var(--mono); font-size: 0.82rem; padding: 0.85rem 1rem; flex: 1;
+        text-align: left; color: var(--text); white-space: nowrap; overflow-x: auto;
+      }
+      .install code .p { color: var(--accent); user-select: none; }
+      .install button {
+        font-family: var(--sans); font-size: 0.78rem; font-weight: 600; padding: 0 1.05rem;
+        border: 0; border-left: 1px solid var(--line); background: var(--panel); color: var(--muted);
+        cursor: pointer; transition: color 0.15s, background 0.15s;
+      }
+      .install button:hover { color: var(--accent); background: #1a212c; }
+      .install button.done { color: var(--accent); }
+      .hero-links { font-size: 0.9rem; color: var(--dim); }
+      .hero-links a { margin: 0 0.55rem; }
+      section { padding: 3.25rem 0; }
+      h2 { font-size: 1.35rem; margin: 0 0 0.5rem; letter-spacing: -0.01em; }
+      h2 .n { font-family: var(--mono); color: var(--accent); font-size: 0.85rem; margin-right: 0.55rem; }
+      .lede { color: var(--muted); margin: 0 0 1.75rem; max-width: 42rem; }
+      .terminal {
+        border: 1px solid var(--line); border-radius: 0.7rem; background: #080a0e;
+        overflow: hidden; box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.5);
+      }
+      .tbar { display: flex; align-items: center; gap: 0.45rem; padding: 0.7rem 0.95rem; background: var(--panel); border-bottom: 1px solid var(--line); }
+      .dot { width: 0.68rem; height: 0.68rem; border-radius: 50%; background: #2c3441; }
+      .tbar span { margin-left: auto; font-family: var(--mono); font-size: 0.7rem; color: var(--dim); }
+      .terminal pre { font-family: var(--mono); font-size: 0.8rem; line-height: 1.75; margin: 0; padding: 1.15rem; overflow-x: auto; white-space: pre; }
+      .g { color: var(--green); } .r { color: var(--red); } .a { color: var(--amber); }
+      .c { color: var(--accent); } .d { color: var(--dim); } .m { color: var(--muted); }
+      .mg { color: var(--magenta); } .b { font-weight: 700; }
+      .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(15.5rem, 1fr)); gap: 1rem; }
+      .card {
+        border: 1px solid var(--line); border-radius: 0.7rem;
+        background: linear-gradient(180deg, var(--bg-soft), rgba(17, 21, 28, 0.35));
+        padding: 1.35rem; transition: border-color 0.18s, transform 0.18s;
+      }
+      .card:hover { border-color: #33405280; transform: translateY(-2px); }
+      .card h3 { font-size: 0.94rem; margin: 0 0 0.5rem; display: flex; align-items: baseline; gap: 0.5rem; }
+      .card h3 i { font-family: var(--mono); font-style: normal; color: var(--accent); font-size: 0.85rem; }
+      .card p { margin: 0; font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+      table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+      th, td { text-align: left; padding: 0.7rem 0.5rem; border-bottom: 1px solid var(--line); }
+      th { color: var(--dim); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
+      td code { font-family: var(--mono); font-size: 0.84rem; color: var(--accent); white-space: nowrap; }
+      td:last-child { color: var(--muted); }
+      .reason { border-left: 2px solid var(--line); padding: 0 0 0 1.15rem; margin-bottom: 1.6rem; }
+      .reason:hover { border-left-color: var(--accent-dim); }
+      .reason h3 { font-size: 0.98rem; margin: 0 0 0.35rem; }
+      .reason p { margin: 0; color: var(--muted); font-size: 0.92rem; }
+      .reason code, .lede code, .card p code {
+        font-family: var(--mono); font-size: 0.85em; background: var(--panel);
+        padding: 0.1rem 0.32rem; border-radius: 0.25rem; color: var(--text);
+      }
+      .warning {
+        border: 1px solid rgba(248, 113, 113, 0.4);
+        border-left: 3px solid var(--red);
+        border-radius: 0.5rem;
+        background: rgba(248, 113, 113, 0.06);
+        padding: 1rem 1.25rem;
+        color: var(--muted);
+        font-size: 0.9rem;
+        max-width: 42rem;
+        margin: 0 auto 2rem;
+        text-align: left;
+      }
+      .warning b { color: var(--red); }
+      footer { padding: 3rem 0 4rem; text-align: center; color: var(--dim); font-size: 0.86rem; border-top: 1px solid var(--line); margin-top: 2rem; }
+      @media (max-width: 40rem) {
+        body { font-size: 16px; }
+        header { padding: 3.5rem 0 2.5rem; }
+        .terminal pre { font-size: 0.68rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <pre class="logo" aria-label="flipper-portals">
+███████╗██╗     ██╗██████╗ ██████╗ ███████╗██████╗
+██╔════╝██║     ██║██╔══██╗██╔══██╗██╔════╝██╔══██╗
+█████╗  ██║     ██║██████╔╝██████╔╝█████╗  ██████╔╝
+██╔══╝  ██║     ██║██╔═══╝ ██╔═══╝ ██╔══╝  ██╔══██╗
+██║     ███████╗██║██║     ██║     ███████╗██║  ██║
+╚═╝     ╚══════╝╚═╝╚═╝     ╚═╝     ╚══════╝╚═╝  ╚═╝
+██████╗  ██████╗ ██████╗ ████████╗ █████╗ ██╗     ███████╗
+██╔══██╗██╔═══██╗██╔══██╗╚══██╔══╝██╔══██╗██║     ██╔════╝
+██████╔╝██║   ██║██████╔╝   ██║   ███████║██║     ███████╗
+██╔═══╝ ██║   ██║██╔══██╗   ██║   ██╔══██║██║     ╚════██║
+██║     ╚██████╔╝██║  ██║   ██║   ██║  ██║███████╗███████║
+╚═╝      ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝</pre>
+
+        <h1>154+ captive portals, ready to deploy.</h1>
+        <p class="tagline">
+          Evil portal templates for the Flipper Zero WiFi Dev Board and ESP32 Marauder.
+          Custom builds, US &amp; European brands, and the tooling to push them.
+        </p>
+
+        <div class="badges">
+          <span class="badge">portals <b>154+</b></span>
+          <span class="badge">EU brands <b>124</b></span>
+          <span class="badge">custom <b>4</b></span>
+          <span class="badge">deploy tooling <b>included</b></span>
+        </div>
+
+        <p class="warning">
+          <b>For authorized penetration testing and security research only.</b>
+          Only use these on networks you own or have explicit written permission to test.
+          Unauthorized credential harvesting is illegal.
+        </p>
+
+        <div class="install">
+          <code id="cmd"><span class="p">$ </span>git clone https://github.com/L-ubu/flipper-portals.git</code>
+          <button id="copy" type="button">Copy</button>
+        </div>
+
+        <p class="hero-links">
+          <a href="https://github.com/L-ubu/flipper-portals">GitHub</a>·
+          <a href="#inside">What's inside</a>· <a href="#features">Features</a>·
+          <a href="#brands">Brands</a>· <a href="#why">Why</a>
+        </p>
+      </header>
+
+      <section id="inside">
+        <h2><span class="n">01</span>What a target sees</h2>
+        <p class="lede">
+          Every portal is a self-contained HTML file styled to match the real brand —
+          pixel-close enough to pass a glance test on a phone.
+        </p>
+
+        <div class="terminal">
+          <div class="tbar">
+            <i class="dot"></i><i class="dot"></i><i class="dot"></i><span>captive portal</span>
+          </div>
+          <pre>  <span class="c">+-------------------------------+</span>
+  <span class="c">|</span>        <span class="a b">FLIPPER PORTALS</span>         <span class="c">|</span>
+  <span class="c">|</span>                               <span class="c">|</span>
+  <span class="c">|</span>    <span class="d">+=====================+</span>    <span class="c">|</span>
+  <span class="c">|</span>    <span class="d">|</span>   [x] Free WiFi       <span class="d">|</span>    <span class="c">|</span>
+  <span class="c">|</span>    <span class="d">|</span>   +-------------+     <span class="d">|</span>    <span class="c">|</span>
+  <span class="c">|</span>    <span class="d">|</span>   | Email       |     <span class="d">|</span>    <span class="c">|</span>
+  <span class="c">|</span>    <span class="d">|</span>   | Password    |     <span class="d">|</span>    <span class="c">|</span>
+  <span class="c">|</span>    <span class="d">|</span>   | [CONNECT]   |     <span class="d">|</span>    <span class="c">|</span>
+  <span class="c">|</span>    <span class="d">|</span>   +-------------+     <span class="d">|</span>    <span class="c">|</span>
+  <span class="c">|</span>    <span class="d">+=====================+</span>    <span class="c">|</span>
+  <span class="c">+-------------------------------+</span></pre>
+        </div>
+      </section>
+
+      <section id="features">
+        <h2><span class="n">02</span>What you get</h2>
+
+        <div class="grid">
+          <div class="card">
+            <h3><i>◆</i> 4 custom portals</h3>
+            <p>Hand-crafted originals: glassmorphism café WiFi, luxury hotel, warm coffee shop, corporate blue. Modern UI, not 2009 clipart.</p>
+          </div>
+          <div class="card">
+            <h3><i>◆</i> 26 US premades</h3>
+            <p>Google, Facebook, Apple, Microsoft, airlines and ISPs — the classic set, cleaned up and consistent.</p>
+          </div>
+          <div class="card">
+            <h3><i>◆</i> 124 European portals</h3>
+            <p>The gap nobody else fills: Belgian Rail, Proximus, Delhaize, SNCF, Deutsche Bahn, KLM, Basic-Fit, Walibi and more.</p>
+          </div>
+          <div class="card">
+            <h3><i>◆</i> Forgot-password variants</h3>
+            <p>Many EU portals ship a second page for extra realism — because real portals have one too.</p>
+          </div>
+          <div class="card">
+            <h3><i>◆</i> Deploy tooling</h3>
+            <p>Scripts to push portals to your WiFi Dev Board or ESP32 Marauder without the SD-card shuffle.</p>
+          </div>
+          <div class="card">
+            <h3><i>◆</i> Router clones</h3>
+            <p>TP-Link, NETGEAR, Linksys, UniFi, D-Link, Tenda, AirPort — for firmware-update pretexts.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="brands">
+        <h2><span class="n">03</span>The collection</h2>
+        <p class="lede">A sample of the categories — 154 portals total.</p>
+
+        <table>
+          <thead>
+            <tr><th>Category</th><th>Examples</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>Airlines</code></td><td>Brussels Airlines, Ryanair, KLM, Lufthansa, EasyJet, Air France</td></tr>
+            <tr><td><code>Railways</code></td><td>SNCB/NMBS, Thalys, SNCF, Deutsche Bahn, NS, Renfe</td></tr>
+            <tr><td><code>Hotels</code></td><td>Hilton, Ibis, Novotel, Sheraton, Radisson, Best Western</td></tr>
+            <tr><td><code>Food &amp; coffee</code></td><td>McDonald's, Starbucks, KFC, Quick, Pizza Hut</td></tr>
+            <tr><td><code>Supermarkets</code></td><td>Delhaize, IKEA, Tesco</td></tr>
+            <tr><td><code>Gyms</code></td><td>Basic-Fit, Anytime Fitness, McFIT, Fitness First</td></tr>
+            <tr><td><code>ISPs</code></td><td>Proximus, Vodafone, Deutsche Telekom, Orange, BT</td></tr>
+            <tr><td><code>Theme parks</code></td><td>Walibi, Efteling, Disneyland Paris</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="why">
+        <h2><span class="n">04</span>Why it exists</h2>
+        <p class="lede">The decisions worth knowing about, written down.</p>
+
+        <div class="reason">
+          <h3>EU engagements need EU portals</h3>
+          <p>Every public collection is US-heavy. A Belgian red team showing a Verizon portal to a Ghent office worker is not fooling anyone.</p>
+        </div>
+        <div class="reason">
+          <h3>Realism is the whole point</h3>
+          <p>A portal that looks off gets closed in two seconds. These are built brand-by-brand with matching colors, type and layout.</p>
+        </div>
+        <div class="reason">
+          <h3>Self-contained files</h3>
+          <p>Every portal is one HTML file with inlined assets. No external requests, no broken images mid-engagement.</p>
+        </div>
+      </section>
+
+      <footer>
+        <p>Built by <a href="https://github.com/L-ubu">L-ubu</a> · authorized testing only, always</p>
+        <p><a href="https://github.com/L-ubu/flipper-portals">github.com/L-ubu/flipper-portals</a></p>
+      </footer>
+    </div>
+
+    <script>
+      const button = document.getElementById("copy");
+      button.addEventListener("click", async () => {
+        const command = "git clone https://github.com/L-ubu/flipper-portals.git";
+        try {
+          await navigator.clipboard.writeText(command);
+        } catch {
+          const area = document.createElement("textarea");
+          area.value = command;
+          document.body.appendChild(area);
+          area.select();
+          document.execCommand("copy");
+          area.remove();
+        }
+        button.textContent = "Copied";
+        button.classList.add("done");
+        setTimeout(() => {
+          button.textContent = "Copy";
+          button.classList.remove("done");
+        }, 1800);
+      });
+    </script>
+  </body>
+</html>
